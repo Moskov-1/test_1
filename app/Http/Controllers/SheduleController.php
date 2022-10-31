@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shedule;
+use App\Models\User;
+use App\Models\Location;
 use Illuminate\Http\Request;
 
 class SheduleController extends Controller
@@ -14,7 +16,7 @@ class SheduleController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -24,7 +26,11 @@ class SheduleController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::where('type','guard')->withCount('shedules')
+        ->having('shedules_count', '<', 2)
+        ->get();
+        $locations = Location::all();
+        return view('admin.shedule.create', compact(['users','locations']));
     }
 
     /**
@@ -35,7 +41,16 @@ class SheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $shedule = Shedule::create([
+            'user_id'=>$request->id,
+            'location_id'=>$request->location,
+            'date'=>$request->date,
+            'time_from'=>$request->timeFrom,
+            'time_to'=>$request->timeTo
+        ]);
+
+        return redirect('/dashboard');
+
     }
 
     /**

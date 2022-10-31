@@ -15,7 +15,6 @@ class Shedule extends Model
         'location_id',
         'time_from',
         'time_to',
-        'status',
     ];
 
     /**
@@ -25,7 +24,7 @@ class Shedule extends Model
      */
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     /**
@@ -35,6 +34,6 @@ class Shedule extends Model
      */
     public function location()
     {
-        return $this->hasOne(Location::class);
+        return $this->belongsTo(Location::class);
     }
 }
