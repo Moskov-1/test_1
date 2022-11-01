@@ -49,7 +49,6 @@ class SheduleController extends Controller
             'time_to'=>$request->timeTo
         ]);
 
-        return redirect('/dashboard');
 
     }
 

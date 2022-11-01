@@ -24,13 +24,14 @@
                         @foreach ($users as $user)
                         <tr class="border-b hover:bg-gray-50">
                             <td class="p-4">
+                                {{$user['id']}}
+                            </td>
+                            <td class="p-4">
                                 {{$user['name']}}
                             </td>
-                            <td class="p-4">
-                                {{$user['email']}}
-                            </td>
-                            <td class="p-4">
-                                <button>Select</button>
+                            <td class="p-4 hudai_1">
+                                <button class="hudai">Select</button>
+                                
                             </td>
                         </tr>
                         @endforeach
@@ -94,4 +95,5 @@
         
 
     </div>
+    <script defer src="/static/js/auto_filler.js"></script>
 </x-app-layout>

@@ -15,13 +15,14 @@ use App\Http\Controllers\SheduleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('homePage.landing_page');
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/welcome', function () {
         return view('welcome');
-    });
-    
-    Route::get('/', function () {
-        return view('homePage.landing_page');
     });
     
     Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
