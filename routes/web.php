@@ -16,6 +16,9 @@ use App\Http\Controllers\SheduleController;
 |
 */
 
+Route::get('/hudai', function () {
+    return view('form.guard_pass.guard_pass_index');
+});
 
 Route::get('/', function () {
     return view('homePage.landing_page');
