@@ -17,7 +17,7 @@ class Guard
     public function handle(Request $request, Closure $next)
     {        
         if (auth()->user()->type!='guard') {
-            return redirect('/', 301);
+            return redirect('/dashboard', 301);
         }
         
         return $next($request);

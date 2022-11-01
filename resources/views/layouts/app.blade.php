@@ -58,21 +58,21 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('shedule.create')}}">
                         <span class="icon icon-2"><i class="ri-calendar-2-line"></i></span>
                         <span class="sidebar--item">Schedule</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('guard_pass.index')}}">
                         <span class="icon icon-3"><i class="ri-user-2-line"></i></span>
-                        <span class="sidebar--item" style="white-space: nowrap;">Guards</span>
+                        <span class="sidebar--item" style="white-space: nowrap;">Guard Pass</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('lost_found.index')}}">
                         <span class="icon icon-4"><i class="ri-user-line"></i></span>
-                        <span class="sidebar--item">Viewers</span>
+                        <span class="sidebar--item">Lost & Found</span>
                     </a>
                 </li>
                 <li>

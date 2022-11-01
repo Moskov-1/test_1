@@ -18,7 +18,8 @@
     <div class="container">
         <header>Gate Pass Form</header>
 
-        <form action="#">
+        <form method="POST" action="{{ route('guard_pass.store') }}">
+            @csrf
             <div class="form first">
                 <div class="details personal">
                     <span class="title" style="color: white;">Personal Details</span>
@@ -26,7 +27,7 @@
                     <div class="fields">
                         <div class="input-field">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input name="name" type="text" placeholder="Enter your name" required>
                         </div>
 
                         <!-- <div class="input-field">
@@ -36,27 +37,27 @@
 
                         <div class="input-field">
                             <label>Email</label>
-                            <input type="text" placeholder="Enter your email" required>
+                            <input name="email" type="text" placeholder="Enter your email" required>
                         </div>
 
                         <div class="input-field">
                             <label>Mobile Number</label>
-                            <input type="number" placeholder="Enter mobile number" required>
+                            <input name="phone" type="number" placeholder="Enter mobile number" required>
                         </div>
 
                         <div class="input-field">
                             <label>Identification</label>
-                            <input type="text" placeholder="Enter your identity" required>
+                            <input name="nid" type="number" placeholder="Enter your identity" required>
                         </div>
                         <br>
                         <div class="input-field">
                             <label>Visiting Location</label>
-                            <input type="text" placeholder="Enter your visiting location" required>
+                            <input name="location" type="text" placeholder="Enter your visiting location" required>
                         </div>
                         <br>
                         <div class="input-field">
                             <label>Date & Time</label>
-                            <input type="datetime" placeholder="Enter your department" required>
+                            <input name="date" type="datetime" placeholder="Enter your department" required>
                         </div>
                        
                     </div>
@@ -66,7 +67,7 @@
                     <label class="purpose">Purpose</label>
                     <br>
                     <div class="hudai"></div>
-                    <textarea name="" id="" placeholder="Whom to visit and purpose. . ." required></textarea>
+                    <textarea name="purpose" id="" placeholder="Whom to visit and purpose. . ." required></textarea>
                 </div>
 
                     <button class="nextBtn">

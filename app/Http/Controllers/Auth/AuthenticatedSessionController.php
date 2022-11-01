@@ -32,6 +32,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if (auth()->user()->type=='guard') {
+            return redirect('guard/dashboard');;
+        }
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 

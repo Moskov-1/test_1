@@ -17,7 +17,7 @@ class Admin
     public function handle(Request $request, Closure $next)
     {
         if (auth()->user()->type!='admin') {
-            return redirect('/', 301);
+            return redirect('guard/dashboard', 301);
         }
         
         return $next($request);

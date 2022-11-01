@@ -126,7 +126,7 @@
                 <div class="form-content">
                     <p>What to get pre granted permission
                         to visit the campus?</p>
-                    <a href="gate_pass_form">
+                    <a href="{{route('guard_pass.create')}}">
                         <input type="button" 
                         style="cursor: pointer;"
                         value="REQUEST">
@@ -149,7 +149,7 @@
                         Any lost items can be reported to the authority with our 
                         service and on discovery you will be notified.
                     </div>
-                        <a href="lost_found_form">
+                        <a href="{{route('lost_found.create')}}">
                             <input type="button" value="INFORM" 
                             style="cursor: pointer;">
                         </a>
