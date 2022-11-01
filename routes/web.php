@@ -16,6 +16,10 @@ use App\Http\Controllers\SheduleController;
 |
 */
 
+Route::get('/hudai', function () {
+    return view('guard.dashboard.rabbi_schedule');
+});
+
 Route::get('/', function () {
     return view('homePage.landing_page');
 });
