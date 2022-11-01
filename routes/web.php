@@ -16,9 +16,6 @@ use App\Http\Controllers\SheduleController;
 |
 */
 
-Route::get('/hudai', function () {
-    return view('guard.dashboard.rabbi_schedule');
-});
 
 Route::get('/', function () {
     return view('homePage.landing_page');
@@ -35,7 +32,17 @@ Route::middleware(['auth'])->group(function () {
         return view('admin.index');
     });    
 });
-
-
 Route::resource('shedule', SheduleController::class);
+
+Route::middleware(['auth', 'guard'])->prefix('guard')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('guard.dashboard.index');
+    });
+    Route::get('/shedule', [SheduleController::class, 'index']);        
+    Route::get('/profile', function ()
+    {
+        return view('guard.profile.index');
+    });        
+});
+
 require __DIR__.'/auth.php';

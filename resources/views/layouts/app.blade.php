@@ -52,7 +52,7 @@
         <div class="sidebar">
             <ul class="sidebar--items">
                 <li>
-                    <a href="#" id="active--link">
+                    <a href="{{ route('dashboard') }}" id="active--link">
                         <span class="icon icon-1"><i class="ri-layout-grid-line"></i></span>
                         <span class="sidebar--item">Dashboard</span>
                     </a>

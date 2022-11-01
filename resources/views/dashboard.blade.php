@@ -174,7 +174,17 @@
                     <td>{{$shedule['date']}}</td>
                     <td>{{$shedule->location->name}}</td>
                     <td>{{$shedule['time_from']}} - {{$shedule['time_to']}}</td>
-                    <td><span><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></span></td>
+                    <td>
+                        <form action="{{route('shedule.destroy', ['shedule'=>$shedule])}}" method="post">
+                            <button type="submit">
+                                <i class="ri-delete-bin-line delete"></i>
+                            </button>
+                            @method('delete')
+                            @csrf
+                            {{-- <input class="btn btn-default" type="submit" value="Delete" /> --}}
+                        </form>
+                    </td>
+                    {{-- <td><a href="{{route('shedule.destroy', ['shedule'=>$shedule])}}"><i class="ri-edit-line edit"></i><i class="ri-delete-bin-line delete"></i></a></td> --}}
                     </tr>
                     @endforeach
 

@@ -7,16 +7,17 @@
     
     <div class="parent">
 	  <img src="/static/img/prof.png" class="imagec">
-	  <p class="name">Ashikur Rahman</p>
-	  <p class="id"> ID:1000121 </p>
-	  <div class="hov"><ul class="list">
-	    <li><a href="landing_1.html">HOME</a></li>
-	    <li><a href="dashboard.html">DASHBOARD</a></li>
-		<li><a href="schedule.html">SCHEDULE</a></li>
-		<li><a href="profile.html">PROFILE</a></li>
+	  <p class="name">{{auth()->user()->name}}</p>
+	  <p class="id"> ID:{{auth()->user()->id}} </p>
+	  <div class="hov">
+		<ul class="list">
+	    <li><a href="{{url('/')}}">HOME</a></li>
+	    <li><a href="{{url('/guard/dashboard')}}">DASHBOARD</a></li>
+		<li><a href="{{url('/guard/shedule')}}">SCHEDULE</a></li>
+		<li><a href="{{url('/guard/profile')}}">PROFILE</a></li>
 		<li><a href="Scanner.html">SCANNER</a></li>
-		<li><a href="#">SETTINGS</a></li>
-	  </ul></div>
+	  </ul>
+	</div>
 	</div>
 	  <div id="nav2">
 	   <p class="review">

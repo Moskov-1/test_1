@@ -16,7 +16,8 @@ class SheduleController extends Controller
      */
     public function index()
     {
-        
+        $shedules = auth()->user()->shedules()->with('location')->get();
+        return view('guard.shedule.index', compact('shedules'));   
     }
 
     /**
@@ -29,8 +30,12 @@ class SheduleController extends Controller
         $users = User::where('type','guard')->withCount('shedules')
         ->having('shedules_count', '<', 2)
         ->get();
+
+        $extraUsers = User::where('type','guard')->withCount('shedules')
+        ->having('shedules_count', '>', 1)
+        ->get();
         $locations = Location::all();
-        return view('admin.shedule.create', compact(['users','locations']));
+        return view('admin.shedule.create', compact(['users','locations','extraUsers']));
     }
 
     /**
@@ -49,6 +54,7 @@ class SheduleController extends Controller
             'time_to'=>$request->timeTo
         ]);
 
+        return redirect()->back();
 
     }
 
@@ -94,6 +100,7 @@ class SheduleController extends Controller
      */
     public function destroy(Shedule $shedule)
     {
-        //
+        $shedule->delete();
+        return redirect()->back();
     }
 }
